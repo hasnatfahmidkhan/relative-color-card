@@ -16,7 +16,8 @@
         }
 
         body {
-            --base-color: #07232c;
+            /* --base-color: #07232c; */
+            --base-color: #1c2b4f;
             /* --brand-color: #8b90ff; */
             --brand-color: oklch(from var(--base-color) calc(l * 3) calc(c * 7) h);
             /* --surface-color: #2c2f38; */
@@ -28,13 +29,12 @@
             color: var(--text-color);
             font-family: "Work Sans", sans-serif;
             max-width: 1140px;
+            width: 100%;
+            min-height: 100vh;
             margin: 0 auto;
-            height: 100vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            /* align-items: center;  */
-            gap: 2rem;
 
         }
 
@@ -42,6 +42,8 @@
             display: flex;
             justify-content: space-between;
             /* gap: 1rem; */
+            margin-bottom: 3rem;
+            height: 100%;
         }
 
         header label[for="base-color-input"] {
@@ -104,6 +106,26 @@
             text-decoration: none;
             background: var(--brand-color);
 
+        }
+
+        /* Responsive Design for mobile  */
+        @media screen and (max-width: 576px) {
+            body {
+               padding: 1rem;
+            }
+            header {
+                flex-direction: column;
+                justify-content: center;
+                gap: 1rem;
+                margin-bottom: 1.4rem;
+                align-items: center;
+            }
+            header h1{
+                font-size: 1.6rem;
+            }
+            .card-wrapper {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
